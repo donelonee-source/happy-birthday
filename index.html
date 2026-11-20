@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div id="loader" class="loader">
+    <div class="loader-heart">♥</div>
+    <p>Menyiapkan sesuatu yang istimewa...</p>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+  </div>
+
+  <!-- ============ CANVAS LAYERS ============ -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- ============ LATAR ============ -->
+  <div class="stars" id="stars"></div>
+  <div class="shooting-stars" id="shootingStars"></div>
+  <div class="hearts" id="hearts"></div>
+  <div class="petals" id="petals"></div>
+
+  <!-- ============ UI FLOATING ============ -->
+  <div class="floating-controls">
+    <button id="themeBtn" class="ctrl-btn" title="Ganti Tema">🎨</button>
+  </div>
+
+  <!-- ============ SCREEN: INTRO ============ -->
+  <section class="screen active" id="screenIntro">
+    <div class="intro-content">
+      <div class="intro-glow"></div>
+      <div class="intro-badge">✦ sebuah kejutan kecil ✦</div>
+      <h1 class="intro-title">Ada sesuatu<br><em>untukmu</em></h1>
+      <p class="intro-sub">Tekan tombol di bawah untuk membuka</p>
+      <button class="btn-primary" id="openBtn">
+        <span class="btn-text">Buka Kejutan</span>
+        <span class="btn-glow"></span>
+      </button>
+      <div class="intro-footer">
+        <span>dibuat dengan sepenuh hati</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: COUNTDOWN ============ -->
+  <section class="screen" id="screenCountdown">
+    <div class="countdown-wrap">
+      <p class="countdown-label">Bersiaplah...</p>
+      <div class="countdown-number" id="countdownNumber">3</div>
+      <div class="countdown-ring"></div>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN: MAIN ============ -->
+  <section class="screen" id="screenMain">
+    <div class="main-wrap">
+
+      <!-- BALON -->
+      <div class="balloons" id="balloons"></div>
+
+      <!-- HERO -->
+      <section class="hero" id="heroSection">
+        <p class="hero-kicker">Hari ini spesial</p>
+        <h1 class="hero-title">Selamat Ulang Tahun</h1>
+        <h2 class="hero-name" id="heroName">aqila farisah kumala</h2>
+        <div class="hero-line"></div>
+        <div class="hero-badges">
+          <span class="badge">🎈 Spesial</span>
+          <span class="badge">✨ Berharga</span>
+          <span class="badge">💫 Unik</span>
+        </div>
+      </section>
+
+      <!-- KUE INTERAKTIF -->
+      <section class="cake-section" id="cakeSection">
+        <h3 class="section-title">✦ Tiup Lilinnya ✦</h3>
+        <div class="cake" id="cake">
+          <div class="cake-plate"></div>
+          <div class="cake-layer layer-bottom"></div>
+          <div class="cake-layer layer-middle"></div>
+          <div class="cake-layer layer-top"></div>
+          <div class="cake-icing"></div>
+          <div class="candles" id="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
+          <div class="smoke" id="smoke"></div>
+        </div>
+        <p class="cake-hint" id="cakeHint">🕯️ Tiup lilinnya — klik kue!</p>
+        <div class="cake-progress">
+          <div class="progress-track"><div class="progress-fill" id="cakeProgress"></div></div>
+          <span id="cakeProgressLabel">0 / 3 lilin</span>
+        </div>
+      </section>
+
+      <!-- PESAN UTAMA -->
+      <section class="message-block">
+        <p class="message-lead">Hari ini dunia kembali merayakan hadirnya seseorang yang berarti.</p>
+        <p>Terima kasih sudah menjadi tempat pulang yang paling tenang, dan alasan di balik senyum yang tak pernah ku duga.</p>
+        <p>Semoga tahun ini membawa lebih banyak tawa, langkah yang ringan, dan mimpi yang satu per satu menjadi nyata.</p>
+      </section>
+
+      <!-- KATA-KATA MANIS (Bento Grid Dipertegas) -->
+      <section class="poetry-section" id="poetrySection">
+        <h3 class="section-title">✦ Rangkaian Kata ✦</h3>
+        <div class="bento-grid">
+          
+          <div class="bento-card highlight">
+            <div class="bento-icon-wrapper">🌻</div>
+            <h4>Tentang Dirimu</h4>
+            <p>Kamu adalah salah satu hal terbaik yang pernah hadir dalam hidupku. Terima kasih sudah bertahan, tumbuh, dan tetap menjadi dirimu yang paling jujur.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon-wrapper">🕊️</div>
+            <h4>Doa Kecil</h4>
+            <p>Semoga langit selalu berpihak padamu, dan setiap langkahmu dijaga oleh hal-hal baik.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-icon-wrapper">✨</div>
+            <h4>Sebuah Janji</h4>
+            <p>Aku akan selalu ada — di hari-hari cerahmu, dan terutama di hari-hari yang berat.</p>
+          </div>
+
+          <div class="bento-card highlight">
+            <div class="bento-icon-wrapper">🌱</div>
+            <h4>Tumbuh Bersama</h4>
+            <p>Semoga tahun ini membawa lebih banyak tawa, langkah yang ringan, dan mimpi yang satu per satu menjadi nyata.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TIMELINE PERJALANAN -->
+      <section class="timeline-section" id="timelineSection">
+        <h3 class="section-title">✦ Perjalanan Kita ✦</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-content">
+              <h4>Pertemuan Pertama</h4>
+              <p>Saat-saat sederhana yang ternyata mengubah banyak hal.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-content">
+              <h4>Cerita Dimulai</h4>
+              <p>Obrolan-obrolan kecil yang menjadi kebiasaan tak tergantikan.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-content">
+              <h4>Tumbuh Bersama</h4>
+              <p>Melewati suka duka, belajar memahami satu sama lain.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot">4</div>
+            <div class="timeline-content">
+              <h4>Hari Ini</h4>
+              <p>Merayakan kamu — dan semua hal baik yang kita lalui bersama.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESAN SPESIAL -->
+      <section class="special-message-section">
+        <div class="special-card">
+          <div class="special-icon pulse-heart">💖</div>
+          <h3 class="special-title">Satu Pesan Terakhir</h3>
+          <p class="special-text">
+            "Selamat bertambah usia. Teruslah bersinar, dengan caramu sendiri. Jangan pernah meragukan seberapa berharganya dirimu, karena di mataku, kamu selalu luar biasa."
+          </p>
+          <div class="special-sign">— Dengan sepenuh hati —</div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-heart">♥</div>
+        <p>Dibuat dengan sepenuh hati</p>
+        <p class="footer-small">mode by yahya runzz</p>
+        <p class="footer-small" id="footerYear"></p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
